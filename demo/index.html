@@ -1,0 +1,66 @@
+<title>oscd-designer demo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined&display=block">
+<open-scd></open-scd>
+
+<script type="module">
+// eslint-disable-next-line import/no-unresolved
+import 'https://openenergytools.github.io/scl-editor/open-scd-core/open-scd.js';
+
+const editor = document.querySelector('open-scd');
+
+const plugins = await fetch('plugins.json')
+  .then((res) => res.json())
+
+const params = (new URL(document.location)).searchParams;
+for (const [name, value] of params) {
+  editor.setAttribute(name, value);
+}
+
+editor.plugins = plugins;
+</script>
+
+<script>
+const _customElementsDefine = window.customElements.define;
+window.customElements.define = (name, cl, conf) => {
+  if (!customElements.get(name)) {
+    _customElementsDefine.call(window.customElements, name, cl, conf);
+  }
+};
+</script>
+
+<style>
+  * {
+    --oscd-theme-primary: #516FB4;
+    --oscd-theme-secondary: #1E2947;
+    --oscd-theme-error: #dc322f;
+
+    --oscd-theme-base03: #3C3C3B;
+    --oscd-theme-base02: #575756;
+    --oscd-theme-base01: #706F6F;
+    --oscd-theme-base00: #878787;
+    --oscd-theme-base0: #9D9D9C;
+    --oscd-theme-base1: #B2B2B2;
+    --oscd-theme-base2: #EDEDED;
+    --oscd-theme-base3: #F6F6F6;
+
+    --oscd-theme-text-font: 'Roboto';
+    --oscd-theme-icon-font: "Material Symbols Outlined";
+
+    --primary: var(--oscd-theme-primary);
+    --secondary: var(--oscd-theme-secondary);
+
+    margin: 0px;
+    padding: 0px;
+  }
+
+  abbr {
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  .mdc-tab {
+    --mdc-tab-text-label-color-default: --var(--oscd-theme-base1);
+    --mdc-tab-color-default: --var(--oscd-theme-base1);
+  }
+</style>

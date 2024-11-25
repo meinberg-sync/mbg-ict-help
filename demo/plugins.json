@@ -1,0 +1,76 @@
+{
+  "menu": [
+    {
+      "name": "Open project",
+      "translation": {
+        "de": "Project öffnen"
+      },
+      "icon": "folder_open",
+      "active": true,
+      "src": "https://openenergytools.github.io/scl-editor/plugins/oscd-open/oscd-open.js"
+    },
+    {
+      "name": "Save project",
+      "translation": {
+        "de": "Projekt speichern"
+      },
+      "icon": "save",
+      "active": true,
+      "requireDoc": true,
+      "src": "https://openenergytools.github.io/scl-editor/plugins/oscd-save/oscd-save.js"
+    },
+    {
+      "name": "Help",
+      "icon": "help",
+      "active": true,
+      "requireDoc": false,
+      "src": "../mbg-ict-help.js"
+    },
+    {
+      "name": "Validating",
+      "translation": {
+        "de": "Validieren"
+      },
+      "icon": "rule_folder",
+      "active": true,
+      "requireDoc": true,
+      "src": "https://openenergytools.github.io/scl-editor/plugins/scl-validating/scl-validating.js",
+      "TODO": "Implement as feature with better quality assurance; current version is in experimental phase"
+    },
+    {
+      "name": "Wizarding",
+      "translation": {
+        "de": "Wizarding"
+      },
+      "icon": "edit",
+      "active": true,
+      "requireDoc": true,
+      "src": "https://openenergytools.github.io/scl-editor/plugins/scl-wizarding/scl-wizarding.js"
+    }
+  ],
+  "editor": [
+    {
+      "name": "Start",
+      "translations": {
+        "de": "Start"
+      },
+      "icon": "start",
+      "active": true,
+      "src": "https://openenergytools.github.io/scl-editor/plugins/scl-editor-landing/scl-editor-landing.js"
+    },
+    {
+      "name": "Communication",
+      "icon": "settings_ethernet",
+      "active": true,
+      "requireDoc": true,
+      "src": "https://openenergytools.github.io/scl-editor/plugins/oscd-communication/scl-communication.js"
+    },
+    {
+      "name": "IED",
+      "icon": "edit",
+      "active": true,
+      "requireDoc": true,
+      "src": "https://meinberg-sync.github.io/mbg-ied-editor/mbg-ied-editor.js"
+    }
+  ]
+}
