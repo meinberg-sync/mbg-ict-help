@@ -46,6 +46,11 @@ export default class MbgIcdExtractor extends LitElement {
               <li>.scd</li>
               <li>.scl</li>
             </ul>
+            <img
+              width="100%"
+              src=${new URL('./assets/start-mict.png', import.meta.url).href}
+              alt="Click 'Open Project' to start using Meinberg ICT"
+            />
           </details>
 
           <details class="ict-help-section">
@@ -65,6 +70,12 @@ export default class MbgIcdExtractor extends LitElement {
               need to select the IED you just renamed again as the Editor needs
               to refresh to take into account this change.)
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/ied-editor-pt1.mp4', import.meta.url)
+                .href}
+            ></video>
             <h3>Using the Search Filter</h3>
             <p>
               The Editor also features a search filter where users can narrow
@@ -89,6 +100,12 @@ export default class MbgIcdExtractor extends LitElement {
               switch will be displayed (click the toggle to the right for true,
               left for false).
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/ied-editor-pt2.mp4', import.meta.url)
+                .href}
+            ></video>
           </details>
 
           <details class="ict-help-section">
@@ -111,6 +128,11 @@ export default class MbgIcdExtractor extends LitElement {
               to the selected block, and the configuration settings for the
               report control block.
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/publisher-pt1.mp4', import.meta.url).href}
+            ></video>
             <h3>Adding Datasets</h3>
             <p>
               In the middle view, you can add a dataset to your IED and connect
@@ -127,6 +149,11 @@ export default class MbgIcdExtractor extends LitElement {
               your dataset will populate. You can reaccess this dataset in the
               "Dataset" section.
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/publisher-pt2.mp4', import.meta.url).href}
+            ></video>
             <h3>Configuring Report Control Blocks</h3>
             <p>
               On the right, it will display all the attributes, trigger options,
@@ -138,6 +165,11 @@ export default class MbgIcdExtractor extends LitElement {
               click the "Save" button to ensure your changes are saved to the
               IED.
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/publisher-pt3.mp4', import.meta.url).href}
+            ></video>
           </details>
 
           <details class="ict-help-section">
@@ -155,6 +187,12 @@ export default class MbgIcdExtractor extends LitElement {
               it in XML format for deeper customization. Be sure to click the
               save button at the bottom right to save your changes.
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/edit-subnetworks.mp4', import.meta.url)
+                .href}
+            ></video>
           </details>
 
           <details class="ict-help-section">
@@ -167,6 +205,11 @@ export default class MbgIcdExtractor extends LitElement {
               redo changes, view editing history, extract an individual IED into
               its file, and validate your current file's schema.
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/ict-menu-open.mp4', import.meta.url).href}
+            ></video>
             <h3>Using the IED Extractor</h3>
             <p>
               This option is accessible by clicking on the “Extract IED” option
@@ -177,6 +220,11 @@ export default class MbgIcdExtractor extends LitElement {
               select one of the radio buttons below to choose the format in
               which you would like to export your IED.
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/ict-menu-pt1.mp4', import.meta.url).href}
+            ></video>
             <h3>Validating Your File</h3>
             <p>
               You can also make sure the schema and template of your SCL file
@@ -185,16 +233,14 @@ export default class MbgIcdExtractor extends LitElement {
               these validations run automatically each time you make a change to
               your file.
             </p>
+            <video
+              width="100%"
+              controls
+              src=${new URL('./assets/ict-menu-pt2.mp4', import.meta.url).href}
+            ></video>
           </details>
-
-          <h2>Now, Here's a Puppy!</h2>
-          <video
-            width="100%"
-            controls
-            src=${new URL('./assets/ptp_trackhound.mp4', import.meta.url).href}
-          ></video>
         </div>
-        <div slot="actions">
+        <div class="mict-help-actions" slot="actions">
           <label>
             Show at startup
             <md-checkbox
@@ -235,7 +281,7 @@ export default class MbgIcdExtractor extends LitElement {
       cursor: pointer;
     }
 
-    div[slot='actions'] {
+    .mict-help-actions {
       display: flex;
       justify-content: space-between;
     }
