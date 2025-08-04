@@ -239,6 +239,70 @@ export default class MbgIcdExtractor extends LitElement {
               src=${new URL('./assets/ict-menu-pt2.mp4', import.meta.url).href}
             ></video>
           </details>
+
+          <details class="ict-help-section">
+            <summary>About OpenSCD</summary>
+            <p>
+              Meinberg ICT follows the architecture and development process of
+              the Open System Configuration Designer, or OpenSCD. OpenSCD is an
+              open-source web application that allows users to create and modify
+              IEC 61850 SCL files.
+            </p>
+            <p>
+              It's important to note that it doesn't store any data "on the
+              internet" or "in the cloud." Only the application itself is
+              downloaded from the internet, while all processing of the SCL data
+              happens locally on your computer; the data never leaves your
+              device!
+            </p>
+            <p>
+              For more information about OpenSCD, visit
+              <a href="https://openscd.org/" target="_blank">open-scd.org</a>.
+            </p>
+          </details>
+
+          <details class="ict-help-section">
+            <summary>Contacting Support</summary>
+            <h3>Requesting Bug Fixes and Features</h3>
+            <p>
+              Like other distributions of OpenSCD, Meinberg ICT is an open
+              repository on GitHub. As such, users can create a new issue
+              <a
+                href="https://github.com/meinberg-sync/mbg-open-scd/issues"
+                target="_blank"
+                >here</a
+              >
+              to request bug fixes and features.
+            </p>
+            <h3>Meinberg Support Hotlines</h3>
+            <p>
+              We at Meinberg offer free lifetime support via telephone, email,
+              and remote assistance. For any additional help, you can contact
+              our support team at the hotlines listed below:
+            </p>
+            <h4>Meinberg - International</h4>
+            <p>Hotline: +49 (0) 52 81 / 93 09 888</p>
+            <p>
+              Email:
+              <a href="techsupport@meinberg.de">techsupport@meinberg.de</a>
+            </p>
+            <p>
+              More information can be found
+              <a
+                href="https://www.meinbergglobal.com/english/support/tech-support.htm"
+                target="_blank"
+                >here</a
+              >.
+            </p>
+            <h4>Meinberg - USA</h4>
+            <p>Hotline: +1 (877) PTP-1588</p>
+            <p>
+              Email:
+              <a href="techsupport@meinberg-usa.com"
+                >techsupport@meinberg-usa.com</a
+              >
+            </p>
+          </details>
         </div>
         <div class="mict-help-actions" slot="actions">
           <label>
@@ -273,6 +337,10 @@ export default class MbgIcdExtractor extends LitElement {
     .ict-help-section {
       padding: 1rem 0;
       border-bottom: 1px solid var(--oscd-base1);
+    }
+
+    .ict-help-section:last-of-type {
+      border-bottom: none;
     }
 
     .ict-help-section summary {
