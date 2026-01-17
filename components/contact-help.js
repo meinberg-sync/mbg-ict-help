@@ -41,6 +41,18 @@ class ContactHelp extends LitElement {
         Email:
         <a href="techsupport@meinberg-usa.com">techsupport@meinberg-usa.com</a>
       </p>
+      <h3>More Information</h3>
+      <p>
+        You can use this tool on its own, or, for more optimal use, you can use
+        it in tandem with Meinberg's family of IEC 61850 tools, all integrated
+        in our IMS, Lantime, and microSync models (for more information on our
+        products, visit us
+        <a
+          href="https://www.meinbergglobal.com/english/products/"
+          target="_blank"
+          >here</a
+        >).
+      </p>
     `;
   }
 }
