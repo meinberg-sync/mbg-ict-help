@@ -17,22 +17,22 @@ import '@material/web/checkbox/checkbox.js';
 
 const startupKey = 'mbg-ict-help-startup';
 
-function handleTabChange(event) {
-  const selectedIndex = event.target.activeTabIndex;
-  event.target.parentElement
-    .querySelectorAll('[id*="section"]')
-    .forEach((panel, index) => {
-      if (index !== selectedIndex) {
-        panel.setAttribute('hidden', '');
-      } else {
-        panel.removeAttribute('hidden');
-      }
-    });
-}
-
 export default class MbgIcdExtractor extends LitElement {
   run() {
     this.shadowRoot.querySelector('md-dialog').show();
+  }
+
+  handleTabChange(event) {
+    const selectedIndex = event.target.activeTabIndex;
+    this.shadowRoot
+      .querySelectorAll('[id*="section"]')
+      .forEach((panel, index) => {
+        if (index !== selectedIndex) {
+          panel.setAttribute('hidden', '');
+        } else {
+          panel.removeAttribute('hidden');
+        }
+      });
   }
 
   render() {
@@ -41,12 +41,12 @@ export default class MbgIcdExtractor extends LitElement {
         style="min-width: 80vw; max-width: 80vw; min-height: 60vh; max-height: 80vh;"
         ?open=${!localStorage.getItem(startupKey)}
       >
-        <div slot="headline">User Guide for Meinberg ICT</div>
-        <div slot="content">
+        <div slot="headline" class="mict-help-headline">
+          User Guide for Meinberg ICT
           <md-tabs
             aria-label="Help Tabs"
             active-tab-index="0"
-            @change=${handleTabChange}
+            @change=${this.handleTabChange}
           >
             <md-primary-tab
               id="getting-started-tab"
@@ -95,7 +95,9 @@ export default class MbgIcdExtractor extends LitElement {
               Contact Support
             </md-primary-tab>
           </md-tabs>
+        </div>
 
+        <div slot="content">
           <div
             role="tabpanel"
             id="getting-started-section"
@@ -186,6 +188,18 @@ export default class MbgIcdExtractor extends LitElement {
 
     div[role='tabpanel'] {
       margin: 2rem 0;
+    }
+
+    .mict-help-headline {
+      display: flex;
+      flex-flow: column;
+      gap: 0.5rem;
+      padding-bottom: 0;
+      font-weight: 500;
+    }
+
+    .mict-help-headline md-tabs {
+      width: 100%;
     }
 
     video {
