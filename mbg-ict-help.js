@@ -38,7 +38,7 @@ export default class MbgIcdExtractor extends LitElement {
   render() {
     return html`
       <md-dialog
-        style="min-width: 80vw; max-width: 80vw; min-height: 60vh; max-height: 80vh;"
+        style="min-width: 80vw; max-width: 80vw; min-height: 60vh; max-height: 90vh;"
         ?open=${!localStorage.getItem(startupKey)}
       >
         <div slot="headline" class="mict-help-headline">
