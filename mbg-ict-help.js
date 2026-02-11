@@ -4,6 +4,8 @@ import { MICTGettingStartedTemplate } from './components/getting-started.js';
 import { IedEditorHelpTemplate } from './components/ied-editor-help.js';
 import { PublisherHelpTemplate } from './components/publisher-help.js';
 import { CommunicationHelpTemplate } from './components/communication-help.js';
+import { CompareHelpTemplate } from './components/file-compare-help.js';
+import { SourceEditorHelpTemplate } from './components/source-editor-help.js';
 import { MenuHelpTemplate } from './components/menu-help.js';
 import { AboutOpenSCDTemplate } from './components/about-oscd.js';
 import { ContactHelpTemplate } from './components/contact-help.js';
@@ -77,6 +79,20 @@ export default class MbgIcdExtractor extends LitElement {
               Communication Editor
             </md-primary-tab>
             <md-primary-tab
+              id="compare-files-tab"
+              aria-controls="compare-files-section"
+            >
+              <md-icon slot="icon">compare</md-icon>
+              Compare Files
+            </md-primary-tab>
+            <md-primary-tab
+              id="source-editor-tab"
+              aria-controls="source-editor-section"
+            >
+              <md-icon slot="icon">code</md-icon>
+              Source Editor
+            </md-primary-tab>
+            <md-primary-tab
               id="menu-items-tab"
               aria-controls="menu-items-section"
             >
@@ -128,6 +144,22 @@ export default class MbgIcdExtractor extends LitElement {
             hidden
           >
             ${CommunicationHelpTemplate}
+          </div>
+          <div
+            role="tabpanel"
+            id="compare-files-section"
+            aria-labelledby="compare-files-tab"
+            hidden
+          >
+            ${CompareHelpTemplate}
+          </div>
+          <div
+            role="tabpanel"
+            id="source-editor-section"
+            aria-labelledby="source-editor-tab"
+            hidden
+          >
+            ${SourceEditorHelpTemplate}
           </div>
           <div
             role="tabpanel"

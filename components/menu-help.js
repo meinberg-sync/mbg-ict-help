@@ -19,6 +19,18 @@ class MenuHelp extends LitElement {
         an individual IED into its file, validate your current file's schema,
         and reaccess this help guide.
       </p>
+      <h3>Renaming the Active File</h3>
+      <p>
+        You can rename the currently active SCL file by clicking on the "Rename
+        File" option from the menu. A pop-up will appear with a text input field
+        to rename the file and a dropdown menu to select the file extension.
+        Once you click the "Rename" button, the file will be renamed and the new
+        name will be reflected in the App Bar.
+      </p>
+      <video
+        controls
+        src=${new URL('../assets/file-rename.mp4', import.meta.url).href}
+      ></video>
       <h3>Using the IED Extractor</h3>
       <p>
         This option is accessible by clicking on the “Extract IED” option. Here,
