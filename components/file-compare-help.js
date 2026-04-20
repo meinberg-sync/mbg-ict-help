@@ -22,6 +22,7 @@ class CompareHelp extends LitElement {
         Once you've selected the files and defined the comparison rules, click
         on the "Compare" button to view the differences between them.
       </p>
+      <h3>Interpreting the Comparison Results</h3>
       <p>
         The results will be displayed in a tree view format, where the
         differences between the two files can be identified by their assigned
@@ -29,6 +30,26 @@ class CompareHelp extends LitElement {
         different sections of the tree view to explore the differences in more
         detail.
       </p>
+      <p>
+        The document you select in the left dropdown menu labeled "From
+        document" can be identified in blue, while the document you select in
+        the right dropdown menu labeled "To document" can be identified in navy.
+        The differences between the two files will be highlighted in these
+        colors to help you easily identify what has been added, removed, or
+        changed between the two files. An example of the color coding can be
+        seen in the close-up images below.
+      </p>
+      <img
+        src=${new URL('../assets/compare-files-selectors.png', import.meta.url)
+          .href}
+        alt="Comparison Colors"
+      />
+      <img
+        src=${new URL('../assets/compare-files-example.png', import.meta.url)
+          .href}
+        alt="Comparison Results"
+        style="width: 25vw;"
+      />
       <h3>Accessing the File Comparison Help Guide</h3>
       <p>
         This editor comes with its own help guide that provides more detailed
@@ -46,6 +67,12 @@ class CompareHelp extends LitElement {
 
   static styles = css`
     video {
+      width: 50vw;
+      display: block;
+      margin: 0 auto;
+    }
+
+    img {
       width: 50vw;
       display: block;
       margin: 0 auto;
