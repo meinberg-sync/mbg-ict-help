@@ -17,11 +17,19 @@ import '@material/web/tabs/tabs.js';
 import '@material/web/button/text-button.js';
 import '@material/web/checkbox/checkbox.js';
 
-const startupKey = 'mbg-ict-help-startup';
+const STARTUP_KEY = 'mbg-ict-help-startup';
+let shownThisSession = false;
 
 export default class MbgIcdExtractor extends LitElement {
   run() {
     this.shadowRoot.querySelector('md-dialog').show();
+  }
+
+  firstUpdated() {
+    if (!shownThisSession && !localStorage.getItem(STARTUP_KEY)) {
+      shownThisSession = true;
+      this.shadowRoot.querySelector('md-dialog').show();
+    }
   }
 
   handleTabChange(event) {
@@ -41,7 +49,6 @@ export default class MbgIcdExtractor extends LitElement {
     return html`
       <md-dialog
         style="min-width: 80vw; max-width: 80vw; min-height: 60vh; max-height: 90vh;"
-        ?open=${!localStorage.getItem(startupKey)}
       >
         <div slot="headline" class="mict-help-headline">
           User Guide for Meinberg ICT
@@ -191,11 +198,11 @@ export default class MbgIcdExtractor extends LitElement {
           <label>
             Show at startup
             <md-checkbox
-              ?checked=${!localStorage.getItem(startupKey)}
+              ?checked=${!localStorage.getItem(STARTUP_KEY)}
               aria-label="Show at startup"
               touch-target="wrapper"
               @input="${({ target }) => {
-                localStorage.setItem(startupKey, target.checked ? '' : 'true');
+                localStorage.setItem(STARTUP_KEY, target.checked ? '' : 'true');
               }}"
             ></md-checkbox>
           </label>
