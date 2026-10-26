@@ -4,6 +4,7 @@ import { MICTGettingStartedTemplate } from './components/getting-started.js';
 import { IedEditorHelpTemplate } from './components/ied-editor-help.js';
 import { PublisherHelpTemplate } from './components/publisher-help.js';
 import { CommunicationHelpTemplate } from './components/communication-help.js';
+import { CleanupHelpTemplate } from './components/cleanup-help.js';
 import { CompareHelpTemplate } from './components/file-compare-help.js';
 import { SourceEditorHelpTemplate } from './components/source-editor-help.js';
 import { MenuHelpTemplate } from './components/menu-help.js';
@@ -68,28 +69,35 @@ export default class MbgIcdExtractor extends LitElement {
               id="ied-editor-tab"
               aria-controls="ied-editor-section"
             >
-              <md-icon slot="icon">edit</md-icon>
+              <md-icon slot="icon">developer_board</md-icon>
               IED Editor
             </md-primary-tab>
             <md-primary-tab
               id="publisher-tab"
               aria-controls="publisher-section"
             >
-              <md-icon slot="icon">publish</md-icon>
+              <md-icon slot="icon">dataset</md-icon>
               Publisher
             </md-primary-tab>
             <md-primary-tab
               id="communication-editor-tab"
               aria-controls="communication-editor-section"
             >
-              <md-icon slot="icon">settings_ethernet</md-icon>
+              <md-icon slot="icon">lan</md-icon>
               Communication Editor
+            </md-primary-tab>
+            <md-primary-tab
+              id="cleanup-editor-tab"
+              aria-controls="cleanup-editor-section"
+            >
+              <md-icon slot="icon">cleaning_services</md-icon>
+              Cleanup Editor
             </md-primary-tab>
             <md-primary-tab
               id="compare-files-tab"
               aria-controls="compare-files-section"
             >
-              <md-icon slot="icon">compare</md-icon>
+              <md-icon slot="icon">difference</md-icon>
               Compare Files
             </md-primary-tab>
             <md-primary-tab
@@ -151,6 +159,14 @@ export default class MbgIcdExtractor extends LitElement {
             hidden
           >
             ${CommunicationHelpTemplate}
+          </div>
+          <div
+            role="tabpanel"
+            id="cleanup-editor-section"
+            aria-labelledby="cleanup-editor-tab"
+            hidden
+          >
+            ${CleanupHelpTemplate}
           </div>
           <div
             role="tabpanel"
