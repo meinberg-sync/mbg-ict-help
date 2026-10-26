@@ -23,7 +23,7 @@ class IedEditorHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/ied-editor-renaming.mp4', import.meta.url)
+        src=${new URL('../assets/ied-editor/renaming.mp4', import.meta.url)
           .href}
       ></video>
       <h3>Initializing Data Attributes</h3>
@@ -55,7 +55,7 @@ class IedEditorHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/ied-editor-initializing.mp4', import.meta.url)
+        src=${new URL('../assets/ied-editor/initializing.mp4', import.meta.url)
           .href}
       ></video>
       <h3>Using the Search Filter</h3>
@@ -70,7 +70,7 @@ class IedEditorHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/ied-editor-searching.mp4', import.meta.url)
+        src=${new URL('../assets/ied-editor/searching.mp4', import.meta.url)
           .href}
       ></video>
     `;

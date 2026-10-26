@@ -32,7 +32,7 @@ class SourceEditorHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/source-editor-pt1.mp4', import.meta.url).href}
+        src=${new URL('../assets/source-editor/pt1.mp4', import.meta.url).href}
       ></video>
       <h3>Opening and Using the Settings Panel</h3>
       <p>
@@ -46,7 +46,7 @@ class SourceEditorHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/source-editor-pt2.mp4', import.meta.url).href}
+        src=${new URL('../assets/source-editor/pt2.mp4', import.meta.url).href}
       ></video>
     `;
   }

@@ -29,7 +29,7 @@ class MenuHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/file-rename.mp4', import.meta.url).href}
+        src=${new URL('../assets/menu/file-rename.mp4', import.meta.url).href}
       ></video>
       <h3>Using the IED Extractor</h3>
       <p>
@@ -42,7 +42,7 @@ class MenuHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/ied-extractor.mp4', import.meta.url).href}
+        src=${new URL('../assets/menu/ied-extractor.mp4', import.meta.url).href}
       ></video>
       <h3>Validating Your File</h3>
       <p>
@@ -53,7 +53,7 @@ class MenuHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/ied-validator.mp4', import.meta.url).href}
+        src=${new URL('../assets/menu/ied-validator.mp4', import.meta.url).href}
       ></video>
       <h3>Navigating Between Files</h3>
       <p>
@@ -67,7 +67,7 @@ class MenuHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/file-switcher.mp4', import.meta.url).href}
+        src=${new URL('../assets/menu/file-switcher.mp4', import.meta.url).href}
       ></video>
     `;
   }

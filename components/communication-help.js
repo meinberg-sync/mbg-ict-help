@@ -23,7 +23,10 @@ class CommunicationHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/subnetwork-pt1.mp4', import.meta.url).href}
+        src=${new URL(
+          '../assets/communication/subnetwork-pt1.mp4',
+          import.meta.url,
+        ).href}
       ></video>
 
       <h3>Editing Access Points</h3>
@@ -35,7 +38,10 @@ class CommunicationHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/subnetwork-pt2.mp4', import.meta.url).href}
+        src=${new URL(
+          '../assets/communication/subnetwork-pt2.mp4',
+          import.meta.url,
+        ).href}
       ></video>
 
       <h3>Allocating Access Points to Subnetworks</h3>
@@ -59,7 +65,10 @@ class CommunicationHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/subnetwork-pt3.mp4', import.meta.url).href}
+        src=${new URL(
+          '../assets/communication/subnetwork-pt3.mp4',
+          import.meta.url,
+        ).href}
       ></video>
     `;
   }

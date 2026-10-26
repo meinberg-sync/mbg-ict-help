@@ -30,7 +30,10 @@ class MICTGettingStarted extends LitElement {
         the Main Workspace in the center.
       </p>
       <img
-        src=${new URL('../assets/mict-interface.png', import.meta.url).href}
+        src=${new URL(
+          '../assets/getting-started/mict-interface.png',
+          import.meta.url,
+        ).href}
         alt="MICT Interface Overview"
       />
       <h4>The App Bar</h4>

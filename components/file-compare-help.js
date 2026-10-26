@@ -40,12 +40,12 @@ class CompareHelp extends LitElement {
         seen in the close-up images below.
       </p>
       <img
-        src=${new URL('../assets/compare-files-selectors.png', import.meta.url)
+        src=${new URL('../assets/compare-files/selectors.png', import.meta.url)
           .href}
         alt="Comparison Colors"
       />
       <img
-        src=${new URL('../assets/compare-files-example.png', import.meta.url)
+        src=${new URL('../assets/compare-files/example.png', import.meta.url)
           .href}
         alt="Comparison Results"
         style="width: 25vw;"
@@ -60,7 +60,8 @@ class CompareHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/compare-files.mp4', import.meta.url).href}
+        src=${new URL('../assets/compare-files/help-guide.mp4', import.meta.url)
+          .href}
       ></video>
     `;
   }

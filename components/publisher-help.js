@@ -22,7 +22,7 @@ class PublisherHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/publisher-pt1.mp4', import.meta.url).href}
+        src=${new URL('../assets/publisher/pt1.mp4', import.meta.url).href}
       ></video>
       <h3>Adding Datasets</h3>
       <p>
@@ -41,7 +41,7 @@ class PublisherHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/publisher-pt2.mp4', import.meta.url).href}
+        src=${new URL('../assets/publisher/pt2.mp4', import.meta.url).href}
       ></video>
       <h3>Configuring Report Control Blocks</h3>
       <p>
@@ -55,7 +55,7 @@ class PublisherHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/publisher-pt3.mp4', import.meta.url).href}
+        src=${new URL('../assets/publisher/pt3.mp4', import.meta.url).href}
       ></video>
     `;
   }

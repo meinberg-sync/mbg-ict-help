@@ -36,7 +36,7 @@ class CleanupHelp extends LitElement {
         found.
       </p>
       <img
-        src=${new URL('../assets/cleanup-overview.png', import.meta.url).href}
+        src=${new URL('../assets/cleanup/overview.png', import.meta.url).href}
         alt="The Cleanup Editor showing its three columns"
       />
       <h3>Removing Unreferenced Datasets</h3>
@@ -58,7 +58,7 @@ class CleanupHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/cleanup-datasets.mp4', import.meta.url).href}
+        src=${new URL('../assets/cleanup/datasets.mp4', import.meta.url).href}
       ></video>
       <h3>Removing Orphaned Control Blocks</h3>
       <p>
@@ -83,7 +83,7 @@ class CleanupHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/cleanup-control-blocks.mp4', import.meta.url)
+        src=${new URL('../assets/cleanup/control-blocks.mp4', import.meta.url)
           .href}
       ></video>
       <h3>Removing Unreferenced Data Types</h3>
@@ -108,7 +108,7 @@ class CleanupHelp extends LitElement {
       </p>
       <video
         controls
-        src=${new URL('../assets/cleanup-data-types.mp4', import.meta.url).href}
+        src=${new URL('../assets/cleanup/data-types.mp4', import.meta.url).href}
       ></video>
       <h3>Searching and Selecting Many Items</h3>
       <p>
