@@ -29,6 +29,8 @@ class SourceEditorHelp extends LitElement {
         The editor will display error icons at lines where the file may be
         invalid. Once you're satisfied with your changes, click the "Apply"
         button at the top right of the editor to apply them to the active file.
+        If the markup is not valid XML, an "Invalid XML" message will appear and
+        your changes will not be applied until you fix the errors.
       </p>
       <video
         controls
@@ -38,11 +40,13 @@ class SourceEditorHelp extends LitElement {
       <p>
         The Source Editor also comes with a settings panel that allows you to
         customize the editor's behavior and appearance. To access the settings,
-        enter the keyboard shortcut <code>Ctrl + ,</code> (or
-        <code>Cmd + ,</code> on Mac) in the editor. Here, you can enable or
-        disable line numbers, toggle word wrap, and choose between light and
-        dark themes for the editor. These settings can help improve your editing
-        experience by allowing you to tailor the editor to your preferences.
+        click the <md-icon style="vertical-align: middle;">settings</md-icon>
+        icon at the top left of the editor, or enter the keyboard shortcut
+        <code>Ctrl + ,</code> (or <code>Cmd + ,</code> on Mac) in the editor.
+        Here, you can change the font size, enable or disable line numbers,
+        toggle word wrap ("Soft Wrap"), and choose between light and dark themes
+        for the editor. These settings can help improve your editing experience
+        by allowing you to tailor the editor to your preferences.
       </p>
       <video
         controls

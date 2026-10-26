@@ -49,13 +49,17 @@ class CommunicationHelp extends LitElement {
         To allocate an access point to a subnetwork, click on the
         <md-icon style="vertical-align: middle;">playlist_add</md-icon>
         icon located on the top right side of the subnetwork card. A pop-up
-        window will appear where you can select which access point to allocate
-        to the subnetwork from a dropdown menu.
+        window will appear listing the access points of all IEDs in the file.
+        Check the box next to each access point you want to allocate to the
+        subnetwork (you can use the search field to filter the list), then click
+        "Save".
       </p>
       <p>
         Please note that an access point can only be allocated to one subnetwork
-        at a time. The pop-up window will let you know if an access point is
-        already allocated to another subnetwork, in which it cannot be selected.
+        at a time. The pop-up window marks access points that are already
+        allocated to a subnetwork with "AccessPoint already connected!". To move
+        an access point to another subnetwork, first remove it from its current
+        subnetwork as described below.
       </p>
       <p>
         To remove an access point from a subnetwork, click on the trash can icon

@@ -9,6 +9,12 @@ class IedEditorHelp extends LitElement {
         tab above. Here, you can view the data model of an IED in tree view and
         initialize data attributes.
       </p>
+      <p>
+        Click on an element's name to expand or collapse it. Elements that have
+        been initialized in the IED are shown in blue. Each element also has a
+        pencil icon on the right, which opens a pop-up where you can edit its
+        attributes, such as its description.
+      </p>
       <h3>Selecting and Renaming an IED</h3>
       <p>
         When opening this page, you'll be greeted by a dropdown menu where you
@@ -58,6 +64,39 @@ class IedEditorHelp extends LitElement {
         src=${new URL('../assets/ied-editor/initializing.mp4', import.meta.url)
           .href}
       ></video>
+      <h3>Values for Setting Groups</h3>
+      <p>
+        Some data attributes are settings that can hold a different value for
+        each setting group: those with the functional constraint
+        <code>SG</code> or <code>SE</code>, in a logical device that defines its
+        setting groups (<code>SettingControl</code> with <code>numOfSGs</code>).
+        When you initialize one of these attributes, the editor adds one value
+        per setting group, labeled "Val 1", "Val 2", and so on. The value for
+        the active setting group is marked with "(actSG)".
+      </p>
+      <p>
+        Each value can be edited and saved on its own. Next to every value other
+        than the active one, a
+        <md-icon style="vertical-align: middle;">sync</md-icon> button copies
+        the active setting group's value into that group; it is disabled when
+        both values are already the same. Next to the active value, the
+        <md-icon style="vertical-align: middle;">delete_sweep</md-icon> button
+        removes the values of all setting groups at once.
+      </p>
+      <p>
+        If a setting group has no value, the editor shows "Missing value for SG"
+        followed by the group number in red. Click the plus icon next to the
+        message to add a value for that group. The new value is set to the
+        attribute's default value (or, if it has none, the active setting
+        group's value), and you can then edit it like any other value.
+      </p>
+      <video
+        controls
+        src=${new URL(
+          '../assets/ied-editor/setting-groups.mp4',
+          import.meta.url,
+        ).href}
+      ></video>
       <h3>Using the Search Filter</h3>
       <p>
         The Editor also features a case-insensitive search filter, allowing
@@ -67,6 +106,15 @@ class IedEditorHelp extends LitElement {
         collapse elements in the tree view. Each element (except for
         initializable data attributes) has an expand/collapse all icon on the
         right, allowing you to expand or collapse all its children.
+      </p>
+      <p>
+        You can also separate search terms with spaces to search level by level,
+        for example <code>LLN0 Mod stVal</code>. Click the filter icon next to
+        the search field to choose the scope of the search: "All" searches the
+        whole data model, while "Instantiated" only shows elements that have
+        been initialized in the IED. For more search tips, click the
+        <md-icon style="vertical-align: middle;">help_outline</md-icon> icon to
+        open the search help.
       </p>
       <video
         controls

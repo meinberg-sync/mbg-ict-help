@@ -14,20 +14,29 @@ class MICTGettingStarted extends LitElement {
         Upon opening the tool, you will be greeted with the landing page. Here,
         you can upload an SCL file to begin configuring your IEDs by clicking
         the "Open File" button. The landing page also provides quick access to
-        this help guide, as well as our company website.
+        this help guide and our company website, and you can share your feedback
+        with us by clicking the "Take our survey!" link at the bottom.
       </p>
+      <img
+        src=${new URL(
+          '../assets/getting-started/landing-page.png',
+          import.meta.url,
+        ).href}
+        alt="MICT Landing Page"
+      />
       <p>
         To start, click the "Open File" button to upload an SCL file to the
-        tool. Please note that this means the tool only accepts files with the
-        following extensions: <strong>.icd</strong>, <strong>.cid</strong>,
-        <strong>.iid</strong>, <strong>.scd</strong>, and <strong>.scl</strong>.
+        tool. Please note that the tool only accepts files with the following
+        extensions: <strong>.icd</strong>, <strong>.cid</strong>,
+        <strong>.iid</strong>, <strong>.scd</strong>, <strong>.ssd</strong>, and
+        <strong>.sed</strong>.
       </p>
       <h3>Navigating the Interface</h3>
       <p>
         Once you have uploaded an SCL file, the interface will change to show
         the main configuration tools. There are three main sections to the
         interface: the App Bar at the top, the Navigation Pane on the left, and
-        the Main Workspace in the center.
+        the Main Workspace on the right.
       </p>
       <img
         src=${new URL(
@@ -41,14 +50,14 @@ class MICTGettingStarted extends LitElement {
         Located at the top of the interface, the App Bar is where you can access
         quick menu options, switch between different files, and undo/redo
         actions. To access the tool's menu options, click the
-        <md-icon style="vertical-align: middle;"
-          >arrow_drop_down_circle</md-icon
-        >
-        icon located near the top-left corner of the App Bar.
+        <md-icon style="vertical-align: middle;">arrow_drop_down</md-icon>
+        icon next to the Meinberg logo in the top-left corner of the App Bar.
+        The name of the tool you are currently using is shown to the right of
+        this icon.
       </p>
       <p>
-        The active file is displayed in the center of the App Bar. You can click
-        on the file name to switch between multiple opened files.
+        The active file is displayed near the top-right corner of the App Bar.
+        You can click on the file name to switch between multiple opened files.
       </p>
       <p>
         On the right side of the App Bar, you will find the undo and redo
@@ -61,9 +70,11 @@ class MICTGettingStarted extends LitElement {
       <p>
         The Navigation Pane allows you to browse through the different IED
         editing tools. At the time of writing, the available tools are the IED
-        Editor, the Publisher tool, and the Communication Editor. To learn more
-        about each tool, please refer to their respective tabs in this help
-        guide.
+        Editor, the Publisher, the Communication Editor, the Cleanup Editor,
+        Compare Files, and the Source Editor. To learn more about each tool,
+        please refer to their respective tabs in this help guide. If you need
+        more room to work, click "Collapse sidebar" at the bottom of the
+        Navigation Pane to hide it.
       </p>
       <p>
         Once you select an editing tool, the Main Workspace will be updated to

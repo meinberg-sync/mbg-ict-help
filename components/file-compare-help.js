@@ -17,11 +17,16 @@ class CompareHelp extends LitElement {
         this feature. The Main Workspace will then display the file compare
         interface. You can define what specific area of the SCL file you want to
         compare using the "Comparison Rules" selector. Next, select the two
-        files you want to compare from dropdown menus. then, if applicable,
+        files you want to compare from the dropdown menus. Then, if applicable,
         define the scope of the comparison in the text box that appears below.
         Once you've selected the files and defined the comparison rules, click
         on the "Compare" button to view the differences between them.
       </p>
+      <video
+        controls
+        src=${new URL('../assets/compare-files/compare.mp4', import.meta.url)
+          .href}
+      ></video>
       <h3>Interpreting the Comparison Results</h3>
       <p>
         The results will be displayed in a tree view format, where the
