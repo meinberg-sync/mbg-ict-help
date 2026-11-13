@@ -16,10 +16,8 @@ import '@material/web/tabs/primary-tab.js';
 import '@material/web/tabs/secondary-tab.js';
 import '@material/web/tabs/tabs.js';
 import '@material/web/button/text-button.js';
-import '@material/web/checkbox/checkbox.js';
 
 const STARTUP_KEY = 'mbg-ict-help-startup';
-let shownThisSession = false;
 
 export default class MbgIcdExtractor extends LitElement {
   run() {
@@ -27,10 +25,10 @@ export default class MbgIcdExtractor extends LitElement {
   }
 
   firstUpdated() {
-    if (!shownThisSession && !localStorage.getItem(STARTUP_KEY)) {
-      shownThisSession = true;
-      this.shadowRoot.querySelector('md-dialog').show();
-    }
+    if (localStorage.getItem(STARTUP_KEY) !== null) return;
+
+    localStorage.setItem(STARTUP_KEY, 'true');
+    this.shadowRoot.querySelector('md-dialog').show();
   }
 
   handleTabChange(event) {
@@ -211,17 +209,6 @@ export default class MbgIcdExtractor extends LitElement {
         </div>
 
         <div class="mict-help-actions" slot="actions">
-          <label>
-            Show at startup
-            <md-checkbox
-              ?checked=${!localStorage.getItem(STARTUP_KEY)}
-              aria-label="Show at startup"
-              touch-target="wrapper"
-              @input="${({ target }) => {
-                localStorage.setItem(STARTUP_KEY, target.checked ? '' : 'true');
-              }}"
-            ></md-checkbox>
-          </label>
           <md-text-button
             @click="${() => this.shadowRoot.querySelector('md-dialog').close()}"
             >Close</md-text-button
@@ -265,7 +252,7 @@ export default class MbgIcdExtractor extends LitElement {
 
     .mict-help-actions {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
     }
 
     label {
