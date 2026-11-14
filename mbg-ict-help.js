@@ -12,14 +12,90 @@ import { AboutOpenSCDTemplate } from './components/about-oscd.js';
 import { ContactHelpTemplate } from './components/contact-help.js';
 
 import '@material/web/dialog/dialog.js';
-import '@material/web/tabs/primary-tab.js';
-import '@material/web/tabs/secondary-tab.js';
-import '@material/web/tabs/tabs.js';
+import '@material/web/list/list.js';
+import '@material/web/list/list-item.js';
+import '@material/web/icon/icon.js';
+import '@material/web/iconbutton/icon-button.js';
 import '@material/web/button/text-button.js';
+import '@material/web/divider/divider.js';
 
 const STARTUP_KEY = 'mbg-ict-help-startup';
 
-export default class MbgIcdExtractor extends LitElement {
+const SECTIONS = [
+  {
+    id: 'getting-started',
+    label: 'Getting Started',
+    icon: 'school',
+    template: MICTGettingStartedTemplate,
+  },
+  {
+    id: 'ied-editor',
+    label: 'IED Editor',
+    icon: 'developer_board',
+    template: IedEditorHelpTemplate,
+  },
+  {
+    id: 'publisher',
+    label: 'Publisher',
+    icon: 'dataset',
+    template: PublisherHelpTemplate,
+  },
+  {
+    id: 'communication',
+    label: 'Communication',
+    icon: 'lan',
+    template: CommunicationHelpTemplate,
+  },
+  {
+    id: 'cleanup-editor',
+    label: 'Cleanup Editor',
+    icon: 'cleaning_services',
+    template: CleanupHelpTemplate,
+  },
+  {
+    id: 'compare-files',
+    label: 'Compare Files',
+    icon: 'difference',
+    template: CompareHelpTemplate,
+  },
+  {
+    id: 'source-editor',
+    label: 'Source Editor',
+    icon: 'code',
+    template: SourceEditorHelpTemplate,
+  },
+  {
+    id: 'menu-items',
+    label: 'Menu Items',
+    icon: 'menu',
+    template: MenuHelpTemplate,
+  },
+  {
+    id: 'about',
+    label: 'About OpenSCD',
+    icon: 'info',
+    template: AboutOpenSCDTemplate,
+  },
+  {
+    id: 'contact-support',
+    label: 'Contact Support',
+    icon: 'support',
+    template: ContactHelpTemplate,
+  },
+];
+
+export default class MbgIctHelp extends LitElement {
+  static properties = {
+    activeIndex: { state: true },
+    expanded: { state: true },
+  };
+
+  constructor() {
+    super();
+    this.activeIndex = 0;
+    this.expanded = true;
+  }
+
   run() {
     this.shadowRoot.querySelector('md-dialog').show();
   }
@@ -31,188 +107,78 @@ export default class MbgIcdExtractor extends LitElement {
     this.shadowRoot.querySelector('md-dialog').show();
   }
 
-  handleTabChange(event) {
-    const selectedIndex = event.target.activeTabIndex;
-    this.shadowRoot
-      .querySelectorAll('[id*="section"]')
-      .forEach((panel, index) => {
-        if (index !== selectedIndex) {
-          panel.setAttribute('hidden', '');
-        } else {
-          panel.removeAttribute('hidden');
-        }
-      });
+  selectSection(index) {
+    this.activeIndex = index;
+    this.shadowRoot.querySelector('.mict-help-panel').scrollTop = 0;
+  }
+
+  toggleNav() {
+    this.expanded = !this.expanded;
   }
 
   render() {
+    const active = SECTIONS[this.activeIndex];
+
     return html`
-      <md-dialog
-        style="min-width: 80vw; max-width: 80vw; min-height: 60vh; max-height: 90vh;"
-      >
+      <md-dialog class="mict-help-dialog">
         <div slot="headline" class="mict-help-headline">
           User Guide for Meinberg ICT
-          <md-tabs
-            aria-label="Help Tabs"
-            active-tab-index="0"
-            @change=${this.handleTabChange}
-          >
-            <md-primary-tab
-              id="getting-started-tab"
-              aria-controls="getting-started-section"
-            >
-              <md-icon slot="icon">school</md-icon>
-              Getting Started
-            </md-primary-tab>
-            <md-primary-tab
-              id="ied-editor-tab"
-              aria-controls="ied-editor-section"
-            >
-              <md-icon slot="icon">developer_board</md-icon>
-              IED Editor
-            </md-primary-tab>
-            <md-primary-tab
-              id="publisher-tab"
-              aria-controls="publisher-section"
-            >
-              <md-icon slot="icon">dataset</md-icon>
-              Publisher
-            </md-primary-tab>
-            <md-primary-tab
-              id="communication-editor-tab"
-              aria-controls="communication-editor-section"
-            >
-              <md-icon slot="icon">lan</md-icon>
-              Communication Editor
-            </md-primary-tab>
-            <md-primary-tab
-              id="cleanup-editor-tab"
-              aria-controls="cleanup-editor-section"
-            >
-              <md-icon slot="icon">cleaning_services</md-icon>
-              Cleanup Editor
-            </md-primary-tab>
-            <md-primary-tab
-              id="compare-files-tab"
-              aria-controls="compare-files-section"
-            >
-              <md-icon slot="icon">difference</md-icon>
-              Compare Files
-            </md-primary-tab>
-            <md-primary-tab
-              id="source-editor-tab"
-              aria-controls="source-editor-section"
-            >
-              <md-icon slot="icon">code</md-icon>
-              Source Editor
-            </md-primary-tab>
-            <md-primary-tab
-              id="menu-items-tab"
-              aria-controls="menu-items-section"
-            >
-              <md-icon slot="icon">menu</md-icon>
-              Menu Items
-            </md-primary-tab>
-            <md-primary-tab id="about-tab" aria-controls="about-section">
-              <md-icon slot="icon">info</md-icon>
-              About OpenSCD
-            </md-primary-tab>
-            <md-primary-tab
-              id="contact-support-tab"
-              aria-controls="contact-support-section"
-            >
-              <md-icon slot="icon">support</md-icon>
-              Contact Support
-            </md-primary-tab>
-          </md-tabs>
-        </div>
-
-        <div slot="content">
-          <div
-            role="tabpanel"
-            id="getting-started-section"
-            aria-labelledby="getting-started-tab"
-          >
-            ${MICTGettingStartedTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="ied-editor-section"
-            aria-labelledby="ied-editor-tab"
-            hidden
-          >
-            ${IedEditorHelpTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="publisher-section"
-            aria-labelledby="publisher-tab"
-            hidden
-          >
-            ${PublisherHelpTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="communication-editor-section"
-            aria-labelledby="communication-editor-tab"
-            hidden
-          >
-            ${CommunicationHelpTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="cleanup-editor-section"
-            aria-labelledby="cleanup-editor-tab"
-            hidden
-          >
-            ${CleanupHelpTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="compare-files-section"
-            aria-labelledby="compare-files-tab"
-            hidden
-          >
-            ${CompareHelpTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="source-editor-section"
-            aria-labelledby="source-editor-tab"
-            hidden
-          >
-            ${SourceEditorHelpTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="menu-items-section"
-            aria-labelledby="menu-items-tab"
-            hidden
-          >
-            ${MenuHelpTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="about-section"
-            aria-labelledby="about-tab"
-            hidden
-          >
-            ${AboutOpenSCDTemplate}
-          </div>
-          <div
-            role="tabpanel"
-            id="contact-support-section"
-            aria-labelledby="contact-support-tab"
-            hidden
-          >
-            ${ContactHelpTemplate}
-          </div>
-        </div>
-
-        <div class="mict-help-actions" slot="actions">
           <md-text-button
             @click="${() => this.shadowRoot.querySelector('md-dialog').close()}"
             >Close</md-text-button
           >
+        </div>
+
+        <div slot="content" class="mict-help-body">
+          <nav
+            id="help-nav"
+            class="mict-help-nav ${this.expanded ? '' : 'collapsed'}"
+            aria-label="Help Sections"
+          >
+            <md-list>
+              ${SECTIONS.map(
+                (section, index) => html`
+                  <md-list-item
+                    type="button"
+                    aria-current=${index === this.activeIndex
+                      ? 'true'
+                      : 'false'}
+                    aria-label=${section.label}
+                    title=${this.expanded ? '' : section.label}
+                    @click=${() => this.selectSection(index)}
+                  >
+                    <md-icon slot="start">${section.icon}</md-icon>
+                    ${this.expanded ? section.label : ''}
+                  </md-list-item>
+                `,
+              )}
+            </md-list>
+
+            <md-divider></md-divider>
+
+            <md-list-item
+              type="button"
+              class="expand-help"
+              aria-controls="help-nav"
+              aria-expanded=${String(this.expanded)}
+              aria-label=${this.expanded
+                ? 'Collapse Navigation'
+                : 'Expand Navigation'}
+              title="${this.expanded ? '' : 'Expand Navigation'}"
+              @click=${this.toggleNav}
+            >
+              <md-icon slot="start"
+                >${this.expanded
+                  ? 'arrow_menu_close'
+                  : 'arrow_menu_open'}</md-icon
+              >
+              ${this.expanded ? 'Collapse Navigation' : ''}
+            </md-list-item>
+          </nav>
+
+          <section id="${active.id}-section" class="mict-help-panel">
+            ${active.template}
+          </section>
         </div>
       </md-dialog>
     `;
@@ -228,40 +194,82 @@ export default class MbgIcdExtractor extends LitElement {
       --md-dialog-container-shape: 1rem;
     }
 
-    div[role='tabpanel'] {
-      margin: 2rem 0;
+    .mict-help-dialog {
+      --mbg-help-dialog-height: 95vh;
+
+      width: 80vw;
+      max-width: 80vw;
+      max-height: var(--mbg-help-dialog-height);
     }
 
     .mict-help-headline {
       display: flex;
-      flex-flow: column;
-      gap: 0.5rem;
-      padding-bottom: 0;
+      align-items: center;
+      justify-content: space-between;
       font-weight: 500;
     }
 
-    .mict-help-headline md-tabs {
-      width: 100%;
+    .mict-help-body {
+      display: flex;
+      gap: 1rem;
+      height: calc(var(--mbg-help-dialog-height) - 10rem);
+      box-sizing: border-box;
+    }
+
+    .mict-help-nav {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      width: 15rem;
+      transition: width 150ms ease;
+      overflow: hidden;
+      border-right: solid 0.5px
+        var(--md-sys-color-outline-variant, var(--oscd-base1));
+    }
+
+    .mict-help-nav.collapsed {
+      width: 4.5rem;
+    }
+
+    .mict-help-nav md-list {
+      --md-list-container-color: transparent;
+
+      flex: 1;
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+    }
+
+    .mict-help-nav md-list-item {
+      width: calc(100% - 1rem);
+      border-radius: 2rem;
+      white-space: nowrap;
+    }
+
+    .mict-help-nav md-list-item[aria-current='true'] {
+      --md-list-item-container-color: color-mix(
+        in srgb,
+        var(--oscd-primary) 15%,
+        transparent
+      );
+      --md-list-item-label-text-color: var(--oscd-primary);
+      --md-list-item-leading-icon-color: var(--oscd-primary);
+    }
+
+    .mict-help-nav md-divider {
+      width: calc(100% - 1rem);
+      margin: 0.5rem 0;
+    }
+
+    .mict-help-panel {
+      flex: 1;
+      min-width: 0;
+      overflow-y: auto;
     }
 
     video {
       width: 60%;
       display: block;
       margin: 0 auto;
-    }
-
-    .mict-help-actions {
-      display: flex;
-      justify-content: center;
-    }
-
-    label {
-      display: flex;
-      align-items: center;
-      font-family: var(--oscd-text-font);
-      font-size: 14px;
-      color: var(--oscd-base01);
-      gap: inherit;
     }
   `;
 }
