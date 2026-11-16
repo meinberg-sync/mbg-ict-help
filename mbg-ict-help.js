@@ -8,7 +8,6 @@ import { CleanupHelpTemplate } from './components/cleanup-help.js';
 import { CompareHelpTemplate } from './components/file-compare-help.js';
 import { SourceEditorHelpTemplate } from './components/source-editor-help.js';
 import { MenuHelpTemplate } from './components/menu-help.js';
-import { AboutOpenSCDTemplate } from './components/about-oscd.js';
 import { ContactHelpTemplate } from './components/contact-help.js';
 
 import '@material/web/dialog/dialog.js';
@@ -69,12 +68,6 @@ const SECTIONS = [
     label: 'Menu Items',
     icon: 'menu',
     template: MenuHelpTemplate,
-  },
-  {
-    id: 'about',
-    label: 'About OpenSCD',
-    icon: 'info',
-    template: AboutOpenSCDTemplate,
   },
   {
     id: 'contact-support',
@@ -240,7 +233,6 @@ export default class MbgIctHelp extends LitElement {
     }
 
     .mict-help-nav md-list-item {
-      width: calc(100% - 1rem);
       border-radius: 2rem;
       white-space: nowrap;
     }
@@ -258,6 +250,10 @@ export default class MbgIctHelp extends LitElement {
     .mict-help-nav md-divider {
       width: calc(100% - 1rem);
       margin: 0.5rem 0;
+    }
+
+    .expand-help {
+      width: calc(100% - 1rem);
     }
 
     .mict-help-panel {

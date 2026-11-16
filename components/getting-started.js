@@ -5,9 +5,29 @@ class MICTGettingStarted extends LitElement {
     return html`
       <h2>Introduction to MICT</h2>
       <p>
-        Welcome to Meinberg's IED Configuration Tool! Here, you can configure
-        your IEDs, Datasets, Report Controls, and Subnetworks for your digital
-        substation.
+        Welcome to Meinberg's IED Configuration Tool (MICT)! Here, you can
+        configure your IEDs, Datasets, Report Controls, and Subnetworks for your
+        digital substation.
+      </p>
+      <h3>About MICT and OpenSCD</h3>
+      <p>
+        Meinberg ICT follows the architecture and development process of the
+        Open System Configuration Designer, or OpenSCD. OpenSCD is an
+        open-source web application that allows users to create and modify IEC
+        61850 SCL files.
+      </p>
+      <p>
+        <strong
+          >It's important to note that it doesn't store any data "on the
+          internet" or "in the cloud."</strong
+        >
+        Only the application itself is downloaded from the internet, while all
+        processing of the SCL data happens locally on your computer, meaning the
+        data never leaves your device!
+      </p>
+      <p>
+        For more information about OpenSCD, visit
+        <a href="https://openscd.org/" target="_blank">openscd.org</a>.
       </p>
       <h3>Navigating the Landing Page</h3>
       <p>
