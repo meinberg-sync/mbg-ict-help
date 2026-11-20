@@ -235,6 +235,7 @@ export default class MbgIctHelp extends LitElement {
     .mict-help-nav md-list-item {
       border-radius: 2rem;
       white-space: nowrap;
+      width: calc(100% - 1rem);
     }
 
     .mict-help-nav md-list-item[aria-current='true'] {
@@ -250,10 +251,6 @@ export default class MbgIctHelp extends LitElement {
     .mict-help-nav md-divider {
       width: calc(100% - 1rem);
       margin: 0.5rem 0;
-    }
-
-    .expand-help {
-      width: calc(100% - 1rem);
     }
 
     .mict-help-panel {
